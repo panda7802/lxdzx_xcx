@@ -1,0 +1,21 @@
+<!--pages/video_list/video_list.wxml-->
+<view class="page_container" style="padding-left: 5%;padding-right: 5%">
+    <video src="{{curr_url}}" style="width: 100%"></video>
+    <scroll-view scroll-y style="height: 40%;width: 100%;margin-top: 20rpx;text-align: left;"
+                 bindscrolltoupper="scroll_flush" bindscrolltolower="scroll_loadMore">
+        <block wx:for="{{video_list}}" wx:for-item="item">
+            <view style="display: flex;flex-direction: row;margin-top: 15rpx">
+                <image src="https://www.pandafly.cn/static/files/rec{{item.pic_url}}" style="width: 100rpx;height: 100rpx"/>
+                <view style="display: flex;flex-direction: column;">
+                    <view id="{{index}}" style="text-align: left" bindtap="click_item">
+                        <view style="font-size: 42rpx">{{item.title}}</view>
+                        <view style="font-size: 36rpx">{{item.desc}}</view>
+                    </view>
+                </view>
+            </view>
+
+            <view style="background: #aaa;height: 2rpx;margin-top: 8rpx"/>
+        </block>
+
+    </scroll-view>
+</view>

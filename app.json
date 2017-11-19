@@ -1,7 +1,10 @@
 {
   "pages": [
+    "pages/tag/tag",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/video/video",
+    "pages/video_list/video_list"
   ],
   "window": {
     "backgroundTextStyle": "light",

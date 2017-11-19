@@ -1,10 +1,90 @@
 /**app.wxss**/
+page {
+    height: 100%;
+}
+
 .container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+/*基本输入框*/
+.input_tv {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    border: 2rpx solid #aaa;
+    border-radius: 8rpx;
+    text-align: left;
+    padding: 5rpx 10rpx;
+    width: 100%;
+}
+
+/*基本按钮*/
+.base_bt {
+    background: #32cf8c;
+    color: white;
+}
+
+/**无背景按钮*/
+.bt_no_border {
+    border: none;
+    color: #f60;
+}
+
+.input_item {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-top: 8rpx;
+}
+
+/*页面容器*/
+.page_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    text-align: center;
+    /*justify-content:space-around;*/
+}
+
+.query_item {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.query_tag {
+    width: 40%;
+    text-align: left;
+}
+
+.query_input {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    border: 2rpx solid #aaa;
+    border-radius: 8rpx;
+    text-align: left;
+    padding: 0rpx 10rpx;
+    width: 100%;
+    height: 70%;
+}
+
+.query_time{
+    flex-direction: row;
+    display: flex;
+    align-items: left;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    border: 2rpx solid #aaa;
+    border-radius: 8rpx;
+    text-align: left;
+    padding: 0rpx 10rpx;
+    width: 100%;
+    height: 70%;
+}
