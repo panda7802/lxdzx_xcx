@@ -5,8 +5,8 @@
                  bindscrolltoupper="scroll_flush" bindscrolltolower="scroll_loadMore">
         <block wx:for="{{video_list}}" wx:for-item="item">
             <view style="display: flex;flex-direction: row;margin-top: 15rpx">
-                <image src="https://www.pandafly.cn/static/files/rec{{item.pic_url}}" style="width: 100rpx;height: 100rpx"/>
-                <view style="display: flex;flex-direction: column;">
+                <image src="{{file_url+item.pic_url}}" style="width: 100rpx;height: 100rpx"/>
+                <view style="display: flex;flex-direction: column;margin-left:20rpx">
                     <view id="{{index}}" style="text-align: left" bindtap="click_item">
                         <view style="font-size: 42rpx">{{item.title}}</view>
                         <view style="font-size: 36rpx">{{item.desc}}</view>

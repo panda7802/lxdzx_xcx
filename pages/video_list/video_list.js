@@ -7,15 +7,23 @@ var et_input = [];
 
 var parm = {
     video_list: [],
-    curr_url: ""
+    curr_url: "",
+    file_url : getApp().globalData.file_url
 };
 
 function get_video_list(tag_id) {
     //TODO 分页
     var tag = "get_video_by_tag/" + tag_id;
     thttp_utils.sendModel(tag, null, function (res) {
-        parm.video_list = res;
+        parm.video_list = res.data;
+        
+        if(res.data.length > 0) {
+          parm.curr_url = parm.video_list[0].video_url;
+        }
+        
+
         that.setData(parm);
+
     }, null);
 }
 

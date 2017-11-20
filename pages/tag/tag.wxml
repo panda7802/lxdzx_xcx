@@ -2,11 +2,15 @@
 <view class="page_container" style="padding-left: 5%;padding-right: 5%">
     <scroll-view scroll-y style="height: 70%;width: 100%;margin-top: 20rpx;text-align: left;"
                  bindscrolltoupper="scroll_flush" bindscrolltolower="scroll_loadMore">
+
         <block wx:for="{{tag_list}}" wx:for-item="item">
-            <view style="display: flex;flex-direction: column;">
-                <view id="{{item.id}}" style="text-align: left" bindtap="click_item">
-                    <view style="font-size: 42rpx">{{item.name}}</view>
-                    <view style="font-size: 36rpx">{{item.desc}}</view>
+            <!--<view style="font-size: 19rpx">{{file_url + item.pic_url}}</view>-->
+            <view id="{{item.id}}" style="display: flex;flex-direction: column;margin-top: 20rpx" bindtap="click_item">
+                <!--<image wx:if="{{item.pic_url.length()>0}}" src="{{file_url + item.pic_url}}"-->
+                       <!--style="width: 100rpx;height: 100rpx"/>-->
+                <view  style="text-align: left;" >
+                <view style="font-size: 42rpx">{{item.name}}</view>
+                <view style="font-size: 36rpx">{{item.desc}}</view>
                 </view>
             </view>
 

@@ -6,7 +6,8 @@ var that = null;
 var et_input = [];
 
 var parm = {
-    tag_list: []
+    tag_list: [],
+    file_url : getApp().globalData.file_url
 };
 
 /**
@@ -16,7 +17,7 @@ function get_tag_list() {
     // [{"id": 1, "name": "预告片", "desc": "留学的真相预告片"}, {"id": 2, "name": "师夷记", "desc": "新版节目"}]
     var tag = "get_tags";
     thttp_utils.sendModel(tag, null, function (res) {
-        parm.tag_list = res;
+        parm.tag_list = res.data;
         that.setData(parm);
     }, null);
 }
@@ -37,6 +38,7 @@ Page({
     },
 
     click_item: function (e) {
+        console.log(e)
         var id = e.currentTarget.id;
         var s_url = '../video_list/video_list?id=' + id;
         wx.navigateTo({

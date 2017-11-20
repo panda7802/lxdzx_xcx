@@ -164,6 +164,7 @@ function sendModel(tag, dict, succ_func, fail_func) {
     if (s_json.length > 0) {
         url2send += +"?" + s_json;
     }
+    console.log(url2send);
     wx.request({
         url: url2send,
         data: {},
@@ -180,9 +181,6 @@ function sendModel(tag, dict, succ_func, fail_func) {
                         duration: 2000
                     });
                     console.error(s);
-                    // if (!isSessionInvalid(s)) {
-                    //     ttools.gotoLogin();
-                    // }
                 }
                 if (null !== fail_func) {
                     fail_func(res.data);
