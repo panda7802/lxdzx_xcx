@@ -1,2 +1,18 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="page_container" style="padding-left: 3%;padding-right: 3%">
+
+    <video src="{{video_model.video_url}}" style="width: 100%;height: 50%"></video>
+
+    <view style="flex-direction: row;display: flex;height: 30%;margin-top: 10rpx">
+        <image wx:if="{{video_model.pic_url.length > 0}}" mode="widthFix" src="{{file_url + video_model.pic_url}}"
+               style="width: 30%;height: 100%"/>
+        <image wx:else src="../../img/video.png" mode="widthFix" style="width: 30%;height: 100%"/>
+        <text style="margin-left:20rpx;width: 65%;height: 100%">{{video_model.desc}}</text>
+    </view>
+
+    <view style="background: #aaa;height: 2rpx;margin-top: 8rpx;width: 100%"/>
+    <view style="flex-direction: row;display: flex;height:15%;margin-top: 10rpx">
+        此处后续增加评论和打分
+    </view>
+
+</view>

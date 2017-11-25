@@ -1,4 +1,4 @@
-// pages/video_list/video_list.js
+// pages/my/my.js
 
 var thttp_utils = require('../../utils/thttp_utils.js');
 var that = null;
@@ -6,29 +6,9 @@ var that = null;
 var et_input = [];
 
 var parm = {
-    video_list: [],
-    curr_url: "",
-    type: 1,
+    userInfo: getApp().globalData.userInfo,
     file_url: getApp().globalData.file_url
 };
-
-var curr_page = 0;
-var page = 10000;
-
-
-function get_video_list(type) {
-    //TODO 分页
-    // http://127.0.0.1:8000/get_videos_oder?parm={"type":1,"page":0,"rows":10}
-    parm.type = type;
-    var dict = [];
-    dict['type'] = parm.type;
-    dict['page'] = curr_page;
-    dict['rows'] = page;
-    thttp_utils.sendModel("get_videos_oder", dict, function (res) {
-        parm.video_list = res;
-        that.setData(parm);
-    }, null);
-}
 
 Page({
 
@@ -37,31 +17,13 @@ Page({
      */
     data: parm,
 
-    click_type: function (e) {
-        get_video_list(e.currentTarget.id)
-    },
-
-    scroll_flush: function (e) {
-        console.log("刷新");
-    },
-
-    scroll_loadMore: function (e) {
-    },
-
-    click_item: function (e) {
-        var vid = e.currentTarget.id;
-        var s_url = '../video/video?vid=' + vid;
-        wx.navigateTo({
-            url: s_url
-        });
-    },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         that = this;
-
+        parm.userInfo = getApp().globalData.userInfo;
+        that.setData(parm);
     },
 
     /**
@@ -75,7 +37,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        get_video_list(parm.type);
+
     },
 
     /**
@@ -112,4 +74,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-});
+})

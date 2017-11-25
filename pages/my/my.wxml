@@ -1,0 +1,11 @@
+<!--pages/my/my.wxml-->
+<view class="page_container" style="padding-left: 3%;padding-right: 3%;align-items: center;">
+
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"
+           background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <view class="usermotto">
+        <text class="user-motto">{{motto}}</text>
+    </view>
+
+</view>

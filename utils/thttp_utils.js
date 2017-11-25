@@ -159,11 +159,11 @@ function sendModel(tag, dict, succ_func, fail_func) {
         s_json = s_json.substr(0, s_json.length - 1);
         s_json += "}";
         s_json = encodeURIComponent(s_json, "utf-8").replace('+', '%20');
+    } else {
+        s_json = "{}";
     }
     var url2send = site + "/" + tag;
-    if (s_json.length > 0) {
-        url2send += +"?" + s_json;
-    }
+    url2send = url2send + "?parm=" + s_json;
     console.log(url2send);
     wx.request({
         url: url2send,
@@ -183,11 +183,12 @@ function sendModel(tag, dict, succ_func, fail_func) {
                     console.error(s);
                 }
                 if (null !== fail_func) {
-                    fail_func(res.data);
+                    fail_func(res);
                 }
             } else {
                 console.log(res.data);
-                succ_func(res.data);
+                // res.data.data.parent_obj = res.data;
+                succ_func(res.data.data);
             }
         },
         fail: function (res) {

@@ -1,21 +1,47 @@
 <!--pages/video_list/video_list.wxml-->
-<view class="page_container" style="padding-left: 5%;padding-right: 5%">
-    <video src="{{curr_url}}" style="width: 100%"></video>
-    <scroll-view scroll-y style="height: 40%;width: 100%;margin-top: 20rpx;text-align: left;"
-                 bindscrolltoupper="scroll_flush" bindscrolltolower="scroll_loadMore">
-        <block wx:for="{{video_list}}" wx:for-item="item">
-            <view style="display: flex;flex-direction: row;margin-top: 15rpx">
-                <image src="{{file_url+item.pic_url}}" style="width: 100rpx;height: 100rpx"/>
-                <view style="display: flex;flex-direction: column;margin-left:20rpx">
-                    <view id="{{index}}" style="text-align: left" bindtap="click_item">
+<view class="page_container" style="padding-left: 3%;padding-right: 3%">
+    <image src="../../img/zzl.jpg" mode="aspectFit" style="width: 100%;height: 40%"></image>
+    <view style="flex-direction: row;display: flex;justify-content: flex-end;padding-right:20rpx;margin-top: 10rpx;text-align: right;width: 100%;padding-top: 10rpx">
+        <view id="1" wx:if="{{1==type}}" style="background-image: url(../../img/tab_sel.png);" class="tab"
+              bindtap="click_type">最新
+        </view>
+        <view id="1" wx:if="{{1!=type}}" style="background-image: url(../../img/tab.png)" class="tab"
+              bindtap="click_type">最新
+        </view>
+        <view id="2" wx:if="{{2==type}}" style="background-image: url(../../img/tab_sel.png)" class="tab"
+              bindtap="click_type">最热
+        </view>
+        <view id="2" wx:if="{{2!=type}}" style="background-image: url(../../img/tab.png)" class="tab"
+              bindtap="click_type">最热
+        </view>
+        <view id="3" wx:if="{{3==type}}" style="background-image: url(../../img/tab_sel.png)" class="tab"
+              bindtap="click_type">推荐
+        </view>
+        <view id="3" wx:if="{{3!=type}}" style="background-image: url(../../img/tab.png)" class="tab"
+              bindtap="click_type">推荐
+        </view>
+    </view>
+    <scroll-view scroll-y
+                 style="height: 50%;width: 100%;text-align: left">
+        <block wx:for="{{video_list}}" wx:for-item="item" wx:key="index">
+            <view id="{{item.id}}" style="display: flex;flex-direction: row;margin-top: 15rpx;height: 100rpx"
+                  bindtap="click_item">
+                <!--<image wx:if="{{item.pic_url.length > 0}}" src="{{file_url+item.pic_url}}"-->
+                <!--style="width: 100rpx;height: 100rpx"/>-->
+                <!--<image wx:else src="../../img/video.png" style="width: 100rpx;height: 100rpx"/>-->
+                <image src="../../img/video.png" style="width: 80rpx;height: 80rpx"/>
+                <view style="display: flex;flex-direction: column;margin-left:20rpx;height: 100rpx">
+                    <view id="{{index}}" style="text-align: left;">
                         <view style="font-size: 42rpx">{{item.title}}</view>
-                        <view style="font-size: 36rpx">{{item.desc}}</view>
+                        <!--<view style="font-size: 36rpx">{{item.desc}}</view>-->
                     </view>
                 </view>
             </view>
 
-            <view style="background: #aaa;height: 2rpx;margin-top: 8rpx"/>
+            <view style="background: #aaa;height: 2rpx;margin-top: 8rpx;width: 100%"/>
         </block>
 
     </scroll-view>
+
+
 </view>

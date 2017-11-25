@@ -27,6 +27,7 @@
 
 var that = null;
 var tinit = require('./utils/t_init.js');
+var thttp_utils = require('./utils/thttp_utils.js');
 
 App({
     onLaunch: function () {
@@ -47,7 +48,17 @@ App({
                 console.log(res);
                 wx.getUserInfo({
                     success: function (res) {
-                        console.log(res)
+                        console.log("get user info---------");
+                        getApp().globalData.userInfo = res.userInfo;
+                        getApp().globalData.user_name = res.userInfo.nickName;
+                        console.log(getApp().globalData.userInfo);
+                        var dict = [];
+                        // 登录
+                        // http://127.0.0.1:8000/login?parm={"wx_name":"aaa"}
+                        dict["wx_name"] = getApp().globalData.user_name;
+                        thttp_utils.sendModel("login", dict, function (data) {
+                            getApp().globalData.user_id = data.id
+                        }, null)
                     }
                 });
             }
@@ -56,10 +67,10 @@ App({
     globalData: {
         userInfo: null,
         base_url: "https://www.pandafly.cn",
-        // base_url: "http://127.0.0.1:8000",
         file_url: "https://www.pandafly.cn/static/files/recv/",
+        // base_url: "http://127.0.0.1:8000",
         // file_url: "http://127.0.0.1:8000/static/files/recv/",
-        user_name: ""
+        user_name: "",
+        user_id: 0
     }
-})
-;
+});

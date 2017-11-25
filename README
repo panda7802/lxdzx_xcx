@@ -1,0 +1,16 @@
+127.0.0.1:8000/get_tags?parm={}
+
+127.0.0.1:8000/get_video_by_tag?parm={"tag":1,"page":0,"rows":1}
+
+http://127.0.0.1:8000/get_video_by_gjz?parm={"gjz":"留学","page":0,"rows":1}
+
+
+http://127.0.0.1:8000/login?parm={"wx_name":"aaa"}
+
+http://127.0.0.1:8000/play_video?parm={"vid":1,"pid":2}
+
+http://127.0.0.1:8000/get_videos_oder?parm={"type":1,"page":0,"rows":10}
+
+127.0.0.1:8000/get_video_by_id?parm={"vid":1}
+
+http://127.0.0.1:8000/get_videos_oder?parm={"type":1,"page":0,"rows":10000}

@@ -1,0 +1,3 @@
+<!--pages/splash/splash.wxml-->
+<!--<web-view src="https://www.pandafly.cn/" style="width: 100%;height: 100%;"></web-view>-->
+<image src="../../img/splash.jpg" mode="aspectFit" style="width: 100%;height: 100%;"></image>
