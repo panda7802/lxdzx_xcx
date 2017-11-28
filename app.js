@@ -43,12 +43,14 @@ App({
                 }
             }
         });
+        console.log("get setting ---------");
         wx.getSetting({
             success: function (res) {
                 console.log(res);
+                console.log("get user info ---------");
                 wx.getUserInfo({
                     success: function (res) {
-                        console.log("get user info---------");
+                        console.log("get user info res---------");
                         getApp().globalData.userInfo = res.userInfo;
                         getApp().globalData.user_name = res.userInfo.nickName;
                         console.log(getApp().globalData.userInfo);

@@ -1,5 +1,4 @@
-// pages/video_list/video_list.js
-
+// pages/search_res.js
 var thttp_utils = require('../../utils/thttp_utils.js');
 var that = null;
 
@@ -8,33 +7,39 @@ var et_input = [];
 var parm = {
     video_list: [],
     curr_url: "",
-    type: 1,
     file_url: getApp().globalData.file_url
 };
 
 var curr_page = 0;
 var page = 100;
 
-
-function get_video_list(type) {
-    //TODO 分页
-    // http://127.0.0.1:8000/get_videos_oder?parm={"type":1,"page":0,"rows":10}
-    parm.type = type;
+/**
+ * 根据标签搜索
+ */
+function get_list_by_tag(tag) {
+    // 127.0.0.1:8000/get_video_by_tag?parm={"tag":1,"page":0,"rows":1}
     var dict = [];
-    dict['type'] = parm.type;
+    dict['tag'] = tag;
     dict['page'] = curr_page;
     dict['rows'] = page;
-    thttp_utils.sendModel("get_videos_oder", dict, function (res) {
+    thttp_utils.sendModel("get_video_by_tag", dict, function (res) {
         parm.video_list = res;
         that.setData(parm);
     }, null);
 }
 
-function flush_view() {
-    //TODO 每日推荐
-
-    //获取播放列表
-    get_video_list(parm.type);
+/**
+ * 根据单词搜索
+ */
+function get_list_by_gjz(gjz) {
+    var dict = [];
+    dict['gjz'] = gjz;
+    dict['page'] = curr_page;
+    dict['rows'] = page;
+    thttp_utils.sendModel("get_video_by_gjz", dict, function (res) {
+        parm.video_list = res;
+        that.setData(parm);
+    }, null);
 }
 
 Page({
@@ -43,17 +48,6 @@ Page({
      * 页面的初始数据
      */
     data: parm,
-
-    click_type: function (e) {
-        get_video_list(e.currentTarget.id)
-    },
-
-    scroll_flush: function (e) {
-        console.log("刷新");
-    },
-
-    scroll_loadMore: function (e) {
-    },
 
     click_item: function (e) {
         var vid = e.currentTarget.id;
@@ -68,7 +62,12 @@ Page({
      */
     onLoad: function (options) {
         that = this;
-
+        console.log(options);
+        if ("1" === options.type) {//根据类型搜索
+            get_list_by_tag(options.tag);
+        } else if ("2" === options.type) {//根据关键字搜素
+            get_list_by_gjz(options.gjz);
+        }
     },
 
     /**
@@ -82,7 +81,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        flush_view();
+
     },
 
     /**
@@ -103,13 +102,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-        wx.showNavigationBarLoading(); //在标题栏中显示加载
 
-        flush_view();
-
-        // complete
-        wx.hideNavigationBarLoading();//完成停止加载
-        wx.stopPullDownRefresh();//停止下拉刷新
     },
 
     /**

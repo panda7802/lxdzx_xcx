@@ -4,7 +4,8 @@
     "pages/tag/tag",
     "pages/video/video",
     "pages/video_list/video_list",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/search_res/search_res"
   ],
   "window": {
     "backgroundTextStyle": "light",

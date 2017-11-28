@@ -24,13 +24,13 @@
     <scroll-view scroll-y
                  style="height: 50%;width: 100%;text-align: left">
         <block wx:for="{{video_list}}" wx:for-item="item" wx:key="index">
-            <view id="{{item.id}}" style="display: flex;flex-direction: row;margin-top: 15rpx;height: 100rpx"
+            <view id="{{item.id}}" style="display: flex;flex-direction: row;margin-top: 15rpx;"
                   bindtap="click_item">
                 <!--<image wx:if="{{item.pic_url.length > 0}}" src="{{file_url+item.pic_url}}"-->
                 <!--style="width: 100rpx;height: 100rpx"/>-->
                 <!--<image wx:else src="../../img/video.png" style="width: 100rpx;height: 100rpx"/>-->
-                <image src="../../img/video.png" style="width: 80rpx;height: 80rpx"/>
-                <view style="display: flex;flex-direction: column;margin-left:20rpx;height: 100rpx">
+                <image src="../../img/video.png" style="width: 60rpx;height: 60rpx"/>
+                <view style="display: flex;flex-direction: column;margin-left:20rpx;">
                     <view id="{{index}}" style="text-align: left;">
                         <view style="font-size: 42rpx">{{item.title}}</view>
                         <!--<view style="font-size: 36rpx">{{item.desc}}</view>-->

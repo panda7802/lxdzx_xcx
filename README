@@ -4,7 +4,6 @@
 
 http://127.0.0.1:8000/get_video_by_gjz?parm={"gjz":"留学","page":0,"rows":1}
 
-
 http://127.0.0.1:8000/login?parm={"wx_name":"aaa"}
 
 http://127.0.0.1:8000/play_video?parm={"vid":1,"pid":2}
