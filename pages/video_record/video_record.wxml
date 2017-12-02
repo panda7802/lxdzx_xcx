@@ -1,0 +1,22 @@
+<!--pages/video_record/video_record.wxml-->
+<view class="page_container" style="padding-left: 3%;padding-right: 3%">
+    <scroll-view scroll-y
+                 style="height: 50%;width: 100%;text-align: left">
+        <block wx:for="{{video_list}}" wx:for-item="item" wx:key="index">
+            <view id="{{item.id}}" style="display: flex;flex-direction: row;margin-top: 15rpx;align-items: center"  bindtap="click_item">
+                <image src="../../img/video.png" style="width: 80rpx;height: 80rpx;"/>
+                <view style="display: flex;flex-direction: column;margin-left:20rpx;">
+                    <view id="{{index}}" style="text-align: left;">
+                        <view style="font-size: 42rpx">{{item.title}}</view>
+                        <view style="font-size: 36rpx">{{item.watch_time}}</view>
+                    </view>
+                </view>
+            </view>
+
+            <view style="background: #aaa;height: 2rpx;margin-top: 8rpx;width: 100%"/>
+        </block>
+
+    </scroll-view>
+
+
+</view>

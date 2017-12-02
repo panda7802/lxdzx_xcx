@@ -29,6 +29,14 @@ function toast_show_err(s) {
     })
 }
 
+function toast_show(s) {
+    wx.showToast({
+        title: s,
+        icon: 'success',
+        duration: 1000
+    })
+}
+
 /**
  * 登录
  */
@@ -77,6 +85,7 @@ module.exports = {
     gotoLogin: gotoLogin,
     is_null: is_null,
     toast_show_err: toast_show_err,
+    toast_show: toast_show,
     date_format: date_format,
     get_str_len: get_str_len
 };

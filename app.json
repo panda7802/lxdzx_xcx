@@ -1,11 +1,14 @@
 {
   "pages": [
     "pages/splash/splash",
+    "pages/my/my",
     "pages/tag/tag",
     "pages/video/video",
     "pages/video_list/video_list",
-    "pages/my/my",
-    "pages/search_res/search_res"
+    "pages/search_res/search_res",
+    "pages/video_record/video_record",
+    "pages/show_web/show_web",
+    "pages/my_fav/my_fav"
   ],
   "window": {
     "backgroundTextStyle": "light",

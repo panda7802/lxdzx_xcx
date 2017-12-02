@@ -1,0 +1,2 @@
+<!--pages/show_web/show_web.wxml-->
+<web-view src="{{url}}" style="width: 100%;height: 100%"></web-view>

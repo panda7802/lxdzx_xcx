@@ -1,5 +1,6 @@
 // pages/video/video.js
 var thttp_utils = require('../../utils/thttp_utils.js');
+var ttools = require('../../utils/ttools.js');
 var that = null;
 
 var et_input = [];
@@ -12,8 +13,35 @@ var parm = {
         video_url: "",
         title: ""
     },
+    is_fav: false,
     file_url: getApp().globalData.file_url
 };
+
+var vid = 0;
+
+function fav() {
+    parm.is_fav = !parm.is_fav;
+    that.setData(parm);
+    // http://127.0.0.1:8000/do_my_fav?parm={"vid":2,"pid":1}
+    var dict = [];
+    dict["vid"] = parm.video_model.id;
+    dict["pid"] = getApp().globalData.user_id;
+    thttp_utils.sendModel("do_my_fav", dict, function (data) {
+        ttools.toast_show(data.res);
+    }, null);
+}
+
+
+function get_fav() {
+    // http://127.0.0.1:8000/get_people_play_record?parm={"vid":2,"pid":1}
+    var dict = [];
+    dict["vid"] = vid;
+    dict["pid"] = getApp().globalData.user_id;
+    thttp_utils.sendModel("get_people_fav", dict, function (data) {
+        parm.is_fav = data.length > 0;
+        that.setData(parm);
+    }, null);
+}
 
 function play_video() {
     //添加播放记录
@@ -33,11 +61,16 @@ Page({
      */
     data: parm,
 
+    click_fav: function (e) {
+        fav();
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         that = this;
+        vid = options.vid;
         var dict = [];
         // 127.0.0.1:8000/get_video_by_id?parm={"vid":1}
         dict["vid"] = options.vid;
@@ -46,6 +79,7 @@ Page({
             that.setData(parm);
             play_video();
         }, null);
+        get_fav();
     },
 
     /**
@@ -59,7 +93,6 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
     },
 
     /**
