@@ -4,24 +4,25 @@
 .tag_item {
     flex-direction: column;
     display: flex;
-    width: 205rpx;
-    margin: 10rpx;
+    width: 47%;
+    margin: 1%;
     border: 2rpx solid #eee;
-    border-radius: 8rpx;
+    border-radius: 16rpx;
+    padding: 16rpx;
     background: #eee;
-    height: 210rpx;
+    height: 310rpx;
 
 }
 
 .tag_pic {
     width: 100%;
-    height: 170rpx;
+    height: 250rpx;
 }
 
 .tag_txt {
     width: 100%;
     text-align: center;
-    font-size: 32rpx;
+    font-size: 48rpx;
 }
 
 

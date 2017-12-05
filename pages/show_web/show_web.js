@@ -6,8 +6,7 @@ var that = null;
 
 var parm = {
     url: ""
-}
-;
+};
 
 Page({
 
@@ -73,4 +72,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-})
+});

@@ -7,7 +7,7 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
 
 
-    <view style="width: 100%; flex-direction: row;  display: flex;margin-top: 100rpx">
+    <view style="width: 100%; flex-direction: row;  display: flex;margin-top: 60rpx">
         <button class="my_menu" bindtap="click_play_rec">
             <image class="my_img" src="../../img/my/play_rec.png"/>
             <text class="my_txt">播放记录</text>
@@ -18,11 +18,11 @@
         </button>
         <button class="my_menu" bindtap="click_about">
             <image class="my_img" src="../../img/my/about.png"/>
-            <text class="my_txt">关于我们</text>
+            <view class="my_txt">关于我们</view>
         </button>
     </view>
 
-    <view style="width: 100%; flex-direction: row;  display: flex;margin-top: 80rpx">
+    <view style="width: 100%; flex-direction: row;  display: flex;margin-top: 50rpx">
         <button class="my_menu" bindtap="click_notice">
             <image class="my_img" src="../../img/my/notice.png"/>
             <text class="my_txt">站内公告</text>

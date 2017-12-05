@@ -5,13 +5,15 @@
     <view class="input_item" style="height: 10%;margin-top: 0px">
         <view style="text-align: left;width: 20%">关键字</view>
         <input id="gjz" bindinput="et_input_func" class="input_tv" style="width:60%;"
-               placeholder="请输入关键字" value="{{car_num}}"  confirm-type="search" bindconfirm="do_query"/>
+               placeholder="请输入关键字" value="{{car_num}}" confirm-type="search" bindconfirm="do_query"/>
     </view>
 
     <!--</scroll-view>-->
-    <scroll-view scroll-y style="height: 80%;width: 100%;margin-top: 20rpx;text-align: center;padding: 0rpx">
+    <scroll-view scroll-y
+                 style="height: 80%;width: 100%;margin-top: 20rpx;text-align: center;padding: 0rpx;">
         <block wx:for="{{tag_list}}" wx:for-item="item" wx:key="index">
-            <view wx:if="{{index % 3==0}}" style="flex-direction: row;display: flex;width: 100%;">
+            <view wx:if="{{index % 2==0}}"
+                  style="flex-direction: row;display: flex;align-items:center;width: 100%;padding: 0rpx">
                 <view wx:if="{{index < tag_list.length}}" id="{{index}}" class="tag_item" bindtap="click_tag">
                     <image wx:if="{{tag_list[index].pic_url.length > 0}}" src="{{file_url + tag_list[index].pic_url}}"
                            mode="aspectFit" class="tag_pic"></image>
@@ -25,13 +27,13 @@
                     <image wx:else src="{{def_pic}}" mode="aspectFit" class="tag_pic"/>
                     <view class="tag_txt">{{tag_list[index+1].title}}</view>
                 </view>
-                <view wx:if="{{index+2 < tag_list.length}}" id="{{index+2}}" class="tag_item" bindtap="click_tag">
-                    <image wx:if="{{tag_list[index+2].pic_url.length > 0}}"
-                           src="{{file_url + tag_list[index+2].pic_url}}"
-                           mode="aspectFit" class="tag_pic"></image>
-                    <image wx:else src="{{def_pic}}" mode="aspectFit" class="tag_pic"/>
-                    <view class="tag_txt">{{tag_list[index+2].title}}</view>
-                </view>
+                <!--<view wx:if="{{index+2 < tag_list.length}}" id="{{index+2}}" class="tag_item" bindtap="click_tag">-->
+                <!--<image wx:if="{{tag_list[index+2].pic_url.length > 0}}"-->
+                <!--src="{{file_url + tag_list[index+2].pic_url}}"-->
+                <!--mode="aspectFit" class="tag_pic"></image>-->
+                <!--<image wx:else src="{{def_pic}}" mode="aspectFit" class="tag_pic"/>-->
+                <!--<view class="tag_txt">{{tag_list[index+2].title}}</view>-->
+                <!--</view>-->
             </view>
         </block>
     </scroll-view>

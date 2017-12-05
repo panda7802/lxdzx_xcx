@@ -22,7 +22,7 @@ Page({
         var funId = setInterval(function () {
             if (getApp().globalData.user_id > 0) {
                 wx.reLaunch ({
-                    url: '../video_list/video_list'
+                    url: '../tag/tag'
                 });
                 clearInterval(funId)
             }

@@ -21,3 +21,6 @@ http://127.0.0.1:8000/get_people_play_record?parm={"pid":1}
 http://127.0.0.1:8000/do_my_fav?parm={"vid":2,"pid":1}
 
 http://127.0.0.1:8000/get_people_fav?parm={"vid":2,"pid":1}
+
+127.0.0.1:8000/statistics_videos?parm={}
+

@@ -38,12 +38,14 @@ button::after{
 
 .my_txt{
     width: 100%;
-    text-align: center;
     padding: 0rpx;
+    font-size: 32rpx;
+    height: 60rpx;
+    margin-top: -20rpx;
 }
 
 .my_img{
-    width: 80rpx;
-    height:80rpx;
-    padding: 10rpx;
+    width: 100rpx;
+    height:100rpx;
+    padding: 0rpx;
 }
