@@ -8,7 +8,7 @@ var et_input = [];
 var parm = {
     video_list: [],
     curr_url: "",
-    type: 1,
+    type: 4,
     file_url: getApp().globalData.file_url
 };
 

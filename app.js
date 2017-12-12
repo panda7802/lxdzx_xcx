@@ -68,10 +68,10 @@ App({
     },
     globalData: {
         userInfo: null,
-        // base_url: "https://www.pandafly.cn",
-        // file_url: "https://www.pandafly.cn/static/files/recv/",
-        base_url: "http://127.0.0.1:8000",
-        file_url: "http://127.0.0.1:8000/static/files/recv/",
+        base_url: "https://www.pandafly.cn/lxdzx",
+        file_url: "https://www.pandafly.cn/static/files/recv/",
+        // base_url: "http://127.0.0.1:8000/lxdzx",
+        // file_url: "http://127.0.0.1:8000/static/files/recv/",
         user_name: "",
         user_id: 0
     }
