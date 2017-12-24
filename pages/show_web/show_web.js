@@ -20,7 +20,7 @@ Page({
      */
     onLoad: function (options) {
         that = this;
-        parm.url = options.url;
+        parm.url = decodeURIComponent(options.url);
         that.setData(parm);
     },
 
@@ -70,6 +70,15 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+      return {
+        title: '我的留学生活',
+        path: '/pages/show_web/show_web?url=' + encodeURIComponent(parm.url, "utf-8"),
+        success: function (res) {
+          // 转发成功
+        },
+        fail: function (res) {
+          // 转发失败
+        }
+      }
     }
 });

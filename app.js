@@ -68,6 +68,7 @@ App({
     },
     globalData: {
         userInfo: null,
+        base_show_url: "https://www.pandafly.cn/lxdzx_show",
         base_url: "https://www.pandafly.cn/lxdzx",
         file_url: "https://www.pandafly.cn/static/files/recv/",
         // base_url: "http://127.0.0.1:8000/lxdzx",

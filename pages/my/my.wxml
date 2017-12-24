@@ -18,7 +18,7 @@
         </button>
         <button class="my_menu" bindtap="click_about">
             <image class="my_img" src="../../img/my/about.png"/>
-            <view class="my_txt">关于我们</view>
+            <view class="my_txt">我的留学</view>
         </button>
     </view>
 

@@ -27,14 +27,14 @@ Page({
     },
 
     click_about: function (e) {
-        var s_url = '../show_web/show_web?url=' + getApp().globalData.base_url;
+        var s_url = '../show_web/show_web?url=' + getApp().globalData.base_show_url+"/about";
         wx.navigateTo({
             url: s_url
         });
     },
 
     click_notice: function (e) {
-        var s_url = '../show_web/show_web?url=' + getApp().globalData.base_url + "/notice";
+      var s_url = '../show_web/show_web?url=' + getApp().globalData.base_show_url + "/notice";
         wx.navigateTo({
             url: s_url
         });
